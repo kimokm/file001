@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+  animation: glow 2s infinite alternate;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff69b4; }
+  to { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4; }
+}
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 45% 45%;
+  animation: float 10s linear infinite;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background: #555;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-120vh); }
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Cake bounce */
+.cake {
+  font-size: 5em;
+  margin-top: 50px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
